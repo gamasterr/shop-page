@@ -1,0 +1,35 @@
+.item{
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  .wrap{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  span{
+    font-size: 4rem;
+    font-weight: 100;
+  }
+}
+
+
+input[type="checkbox"] {
+  appearance: none;  /* Loại bỏ giao diện mặc định */
+  width: 2rem;       /* Thiết lập chiều rộng */
+  height: 2rem;      /* Thiết lập chiều cao */
+  border: 2px solid #fff; /* Thêm đường viền */
+  border-radius: 2px; /* Tùy chỉnh góc bo tròn */
+  cursor: pointer;   /* Thêm con trỏ chuột */
+  &:hover{
+    padding: 1rem;
+    box-shadow: rgba(172, 171, 171, 0.15) 0px 15px 25px, rgba(253, 253, 253, 0.05) 0px 5px 10px;
+  }
+}
+
+/* Thêm hiệu ứng khi checkbox được chọn */
+input[type="checkbox"]:checked {
+  background-color: #fec54c; /* Màu nền khi được chọn */
+}

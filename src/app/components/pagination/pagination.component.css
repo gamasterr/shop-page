@@ -1,0 +1,12 @@
+div{
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  magin: 0 auto;
+
+  &:hover {
+    background-color: #fec54c;
+  }
+}

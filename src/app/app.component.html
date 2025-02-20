@@ -1,0 +1,152 @@
+<div id="wrapper">
+  <header>
+    <div id="nav-bar">
+      <div class="nav-bar-left">
+        <div class="logo">
+          <img src="https://artkeyuniverse.com/css/v2/images/logo.svg" alt="">
+        </div>
+        @for (item of list_name; track $index) {
+          <app-nav-bar
+            [item_name]="item.name"
+            [child]="item.child"
+          >
+          </app-nav-bar>
+        }
+      </div>
+      <div class="nav-bar-right">
+        <div>
+      <span class="material-symbols-outlined">
+        mail
+      </span>
+        </div>
+        <div>
+      <span class="material-symbols-outlined">
+        account_circle
+      </span>
+        </div>
+        <p>Login</p>
+        <div class="cart">
+      <span class="material-symbols-outlined">
+        shopping_cart
+      </span>
+        </div>
+      </div>
+    </div>
+
+  </header>
+  <section class="link-tree">
+    <p>HOME</p>
+    @for (item of link_trees; track $index) {
+      <app-link-tree
+        [page_name]="item.page_name"
+        [link]="item.page_link"
+
+      ></app-link-tree>
+    }
+  </section>
+  <section id="container">
+    <div id="left-container">
+      <h2>Categories</h2>
+      <div class="menu-left">
+        @for (item of left_menu; track $index) {
+          <app-menu-left
+          [item_name]="item.item_name"
+          [child] ="item.child"
+
+          ></app-menu-left>
+        }
+      </div>
+      <h3>Color</h3>
+      <div class="menu-bottom">
+        <div>
+          @for (item of color_menu; track $index){
+            <app-menu4x3
+              [color]="item.color"
+              [color_code]="item.color_code"
+
+            ></app-menu4x3>
+          }
+        </div>
+
+      </div>
+      <div class="btn-bottom">
+        <button>APPLY FILTER</button>
+        <button>CLEAR FILTER</button>
+      </div>
+    </div>
+    <div id="main-container">
+      <h2>STORE</h2>
+      <div class="wrap-search">
+        <div class="search">
+          <input type="search" name="" id="" placeholder="Search">
+          <span class="material-symbols-outlined">
+          search
+          </span>
+        </div>
+        <div class="sort">
+          <button>Sort by
+            <span class="material-symbols-outlined">
+            keyboard_arrow_down
+            </span>
+          </button>
+
+        </div>
+      </div>
+      <div class="list-card">
+        @for (item of list_product; track $index){
+
+          <app-product-card
+            [image]="item.img"
+            [title]="item.title"
+            [comment]="item.comment"
+            [price]= "item.price"
+            [status]="item.status"
+          ></app-product-card>
+        }
+      </div>
+      <div class="page">
+        <div class="group">
+          <span class="material-symbols-outlined">
+          chevron_backward
+          </span>
+          <p>1</p>
+          <p>2</p>
+          <p>3</p>
+          <p>4</p>
+          <p>...</p>
+          <p>47</p>
+          <span class="material-symbols-outlined">
+          chevron_right
+          </span>
+          </div>
+        </div>
+
+      <div class="footer">
+        <h3>ARTKEY UNIVERSE</h3>
+        <p>Artisan Keycap Maker</p>
+        <div class="group-icon">
+          <span class="material-symbols-outlined">
+          photo_camera
+          </span>
+          <span class="material-symbols-outlined">
+          imagesmode
+          </span>
+          <span class="material-symbols-outlined">
+          slideshow
+          </span>
+          <span class="material-symbols-outlined">
+          slideshow
+          </span>
+
+        </div>
+        <p>© COPYRIGHT 2020 ARTKEYUNIVERSE. ALL RIGHTS RESERVED</p>
+
+      </div>
+    </div>
+
+
+  </section>
+
+
+</div>
+
