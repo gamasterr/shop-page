@@ -1,0 +1,21 @@
+@if(item_name == 'mail'){
+  <div>
+  <span class="material-symbols-outlined">
+    {{item_name}}
+  </span>
+  </div>
+} @else if (item_name =='account_circle'){
+  <div class="account">
+    <span class="material-symbols-outlined">
+    account_circle
+    </span>
+    <div>Login</div>
+  </div>
+
+} @else if (item_name == 'cart'){
+  <div class="cart">
+    <mat-icon [routerLink]="['/cart']" [matBadge]=itemInCart>shopping_cart</mat-icon>
+  </div>
+}
+
+

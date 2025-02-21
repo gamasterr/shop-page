@@ -7,12 +7,10 @@
   <div class="price">
     <p>${{price}}</p>
     @if (status == 'in stock') {
-      <button style="background-color: #fec54c">{{ status }}</button>
+      <button (click)="addToCart()" style="background-color: #fec54c;"  >{{ status }}</button>
     } @else {
-      <button style="background-color: #C4C4C4">{{ status }}</button>
+      <button (click)="addToCart()" style="background-color: #C4C4C4; color: black" disabled>{{ status }}</button>
 
     }
-
-
   </div>
 </div>

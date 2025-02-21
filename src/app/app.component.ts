@@ -6,41 +6,83 @@ import {MenuLeftComponent} from './components/menu-left/menu-left.component';
 import {Menu4x3Component} from './components/menu4x3/menu4x3.component';
 import {ProductCardComponent} from './components/product-card/product-card.component';
 import {PaginationComponent} from './components/pagination/pagination.component';
+import {NavBarRightComponent} from './components/nav-bar-right/nav-bar-right.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavBarComponent, LinkTreeComponent, MenuLeftComponent, Menu4x3Component, ProductCardComponent, PaginationComponent],
+  imports: [RouterOutlet, NavBarComponent, LinkTreeComponent, MenuLeftComponent, Menu4x3Component, ProductCardComponent, PaginationComponent, NavBarRightComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
+itemInCart = 0
+
+onAddToCartApp(event: any){
+  console.log(event)
+  this.itemInCart++
+  console.log(this.itemInCart)
+}
+
     list_name = [
       {
         name: "STORE",
+        router: '/product',
         child: false,
       },
       {
         name: "COMMISSION",
+        router: '/commission',
         child: false,
       },
       {
         name: "CATALOGUE",
+        router: '/category',
         child: false,
       },
       {
         name: "ABOUT US",
+        router: '/about',
         child: false,
       },
       {
         name: "SUPPORT",
+        router: '/support',
         child: true,
       },
       {
         name: "AUTHENTICITY",
+        router: '/authenticity',
         child: false,
       },
+
     ]
+  navBarRight =[
+    {
+      name: "mail",
+      router: '',
+      child: false,
+    },
+    {
+      name: "account_circle",
+      router: '',
+      child: false,
+    },
+    {
+      name: "Login",
+      router: '',
+      child: false,
+    },
+    {
+      name: "cart",
+      router: '',
+      child: false,
+    },
+  ]
+
+
   link_trees =[
     {
       page_name: "Home",

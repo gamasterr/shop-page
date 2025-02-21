@@ -8,28 +8,23 @@
         @for (item of list_name; track $index) {
           <app-nav-bar
             [item_name]="item.name"
+            [router]="item.router"
             [child]="item.child"
           >
           </app-nav-bar>
         }
       </div>
       <div class="nav-bar-right">
-        <div>
-      <span class="material-symbols-outlined">
-        mail
-      </span>
-        </div>
-        <div>
-      <span class="material-symbols-outlined">
-        account_circle
-      </span>
-        </div>
-        <p>Login</p>
-        <div class="cart">
-      <span class="material-symbols-outlined">
-        shopping_cart
-      </span>
-        </div>
+        @for (item of navBarRight; track $index){
+          <app-nav-bar-right
+            [item_name]="item.name"
+            [router]="item.router"
+            [child]="item.child"
+            [itemInCart]=itemInCart
+          >
+
+          </app-nav-bar-right>
+        }
       </div>
     </div>
 
@@ -40,10 +35,10 @@
       <app-link-tree
         [page_name]="item.page_name"
         [link]="item.page_link"
-
       ></app-link-tree>
     }
   </section>
+  <router-outlet></router-outlet>
   <section id="container">
     <div id="left-container">
       <h2>Categories</h2>
@@ -101,6 +96,7 @@
             [comment]="item.comment"
             [price]= "item.price"
             [status]="item.status"
+            (onAddToCart)="onAddToCartApp($event)"
           ></app-product-card>
         }
       </div>
